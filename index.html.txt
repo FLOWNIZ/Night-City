@@ -1,58 +1,60 @@
 <!DOCTYPE html>
-<html lang="de">
+<html>
 <head>
-  <meta charset="UTF-8" />
-  <title>NightCity RP – Interaktive GTA Map</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Nightcity RP - Interaktive GTA Map</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <!-- Leaflet CSS -->
   <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
-
-  <!-- Stil -->
   <style>
     body {
-      font-family: 'Segoe UI', sans-serif;
       margin: 0;
-      background-color: #1e1e1e;
-      color: #f0f0f0;
-    }
-
-    header {
-      text-align: center;
-      padding: 20px;
+      font-family: sans-serif;
       background-color: #111;
-      border-bottom: 3px solid #2ecc71;
+      color: #fff;
+      text-align: center;
     }
-
-    header img {
-      height: 60px;
-      margin-bottom: 10px;
-    }
-
-    h1 {
-      margin: 0;
-      font-size: 28px;
-    }
-
     #map {
-      width: 100%;
+      width: 100vw;
       height: 90vh;
     }
-
-    .leaflet-popup-content {
-      font-size: 14px;
+    h1 {
+      margin: 10px 0;
     }
   </style>
 </head>
 <body>
+  <h1>Nightcity RP - Interaktive GTA Map</h1>
+  <div id="map"></div>
 
-<header>
-  <!-- Dein Logo (ersetze mit Pfad zu deinem Logo) -->
-  <img src="logo.png" alt="NightCity RP Logo" />
-  <h1>NightCity RP – Interaktive GTA RP Map</h1>
-</header>
+  <!-- Leaflet JS -->
+  <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+  <script>
+    // Beispielhafte Bildgröße (anpassen an dein Bild)
+    var mapWidth = 3000;
+    var mapHeight = 3000;
+    var bounds = [[0, 0], [mapHeight, mapWidth]];
 
-<div id="map"></div>
+    // Karte erstellen
+    var map = L.map('map', {
+      crs: L.CRS.Simple,
+      minZoom: -2,
+      maxZoom: 3
+    });
 
-<!-- Leaflet JS -->
-<script src="https://unpkg.com/leaflet/dist/
+    // Dein Bild (lokal oder online verlinkt)
+    var imageUrl = 'gta_map.png';
+    L.imageOverlay(imageUrl, bounds).addTo(map);
+    map.fitBounds(bounds);
+
+    // Marker setzen (Beispiele)
+    L.marker([1500, 800]).addTo(map).bindPopup("<b>LSPD</b><br>Polizeihauptquartier");
+    L.marker([1200, 1600]).addTo(map).bindPopup("<b>Autohaus</b><br>Hier kannst du Fahrzeuge kaufen.");
+    L.marker([1000, 1000]).addTo(map).bindPopup("<b>Top Boy Records</b><br>Labelzentrale für Musik und Events");
+    L.marker([1800, 1300]).addTo(map).bindPopup("<b>Flughafen</b><br>Privat- und Frachtdienste verfügbar.");
+    L.marker([2200, 1900]).addTo(map).bindPopup("<b>Krankenhaus</b><br>Medizinische Versorgung.");
+  </script>
+</body>
+</html>
+
