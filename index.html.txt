@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <title>NightCity RP – Interaktive GTA Map</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <!-- Leaflet CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+
+  <!-- Stil -->
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      background-color: #1e1e1e;
+      color: #f0f0f0;
+    }
+
+    header {
+      text-align: center;
+      padding: 20px;
+      background-color: #111;
+      border-bottom: 3px solid #2ecc71;
+    }
+
+    header img {
+      height: 60px;
+      margin-bottom: 10px;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: 28px;
+    }
+
+    #map {
+      width: 100%;
+      height: 90vh;
+    }
+
+    .leaflet-popup-content {
+      font-size: 14px;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <!-- Dein Logo (ersetze mit Pfad zu deinem Logo) -->
+  <img src="logo.png" alt="NightCity RP Logo" />
+  <h1>NightCity RP – Interaktive GTA RP Map</h1>
+</header>
+
+<div id="map"></div>
+
+<!-- Leaflet JS -->
+<script src="https://unpkg.com/leaflet/dist/
